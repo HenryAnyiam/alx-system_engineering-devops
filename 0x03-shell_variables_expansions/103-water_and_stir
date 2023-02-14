@@ -1,0 +1,2 @@
+#!/bin/bash
+sum=$(($((water#$WATER)) + $((stir#$STIR))))|echo $((bestchol#$sum))
