@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#prints current process PID
+echo $$
