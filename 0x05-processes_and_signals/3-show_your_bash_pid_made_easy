@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#prints pid and names comtaining bash for all users
+pgrep -l bash
