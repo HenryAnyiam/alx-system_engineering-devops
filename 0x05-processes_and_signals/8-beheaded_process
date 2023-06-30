@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #send a SIGKILL signal to a process
+# shellcheck disable=SC2086
 pid=$(pgrep -f "bash ./7-highlander")&&kill -9 $pid
