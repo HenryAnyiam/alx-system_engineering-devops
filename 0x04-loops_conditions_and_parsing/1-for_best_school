@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+list="[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+for i in $list
+do
+	echo "Best School"
+done
