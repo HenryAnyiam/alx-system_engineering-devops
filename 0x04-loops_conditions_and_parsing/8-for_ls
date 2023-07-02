@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 #display directory contents
-ls > list
-new="$(cut -d'-' -f2 list)"
-for i in $new;
+list="$(ls)"
+for i in $list;
 do
-	echo "$i"
+	echo "$i" | cut -d'-' -f2
 done
