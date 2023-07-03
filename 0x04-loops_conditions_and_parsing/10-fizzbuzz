@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#fizzbuzz
+# shellcheck disable=SC2219
+i=1
+while ((i < 101))
+do
+	let "num = $i % 3"
+	let "num1 = $i % 5"
+	if [[ (("$num" == "0")) && (("$num1" == "0")) ]]
+	then
+		echo "FizzBuzz"
+	elif [[ (("$num" == "0")) ]]
+	then
+		echo "Fizz"
+	elif [[ (("$num1" == "0")) ]]
+	then
+		echo "Buzz"
+	else
+		echo "$i"
+	fi
+	((i++))
+done
