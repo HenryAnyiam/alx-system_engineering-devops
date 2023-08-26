@@ -1,6 +1,7 @@
 #client ssh comfiguration file with ssh
-file {'~/.ssh/config':
-  content=> 'Host *      
+file {'/root/.ssh/config':
+  ensure  => file,
+  content => 'Host *      
       PasswordAuthentication no
       IdentityFile ~/.ssh/school',
 }
