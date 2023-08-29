@@ -2,9 +2,7 @@
 #automate nginx configuration
 sudo apt-get -y update
 sudo apt-get -y  install nginx
-sudo chmod -R 755 /var/www
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sudo echo "Ceci n'est pas une page" > /var/www/html/404.html
-sudo sed -i '/\t\t# as directory, then fall back to displaying a 404./a \\t\terror_page 404 /var/www/html/404.html;' /etc/nginx/sites-available/default
-sudo sed -i '/server_name _;/a \\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;\n\t}' /etc/nginx/sites-available/default
+sudo sed -i '/server_name _;/a \\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;\n\t}\n\terror_page 404 /var/wwww/html/404.html' /etc/nginx/sites-available/default
 sudo service nginx restart
