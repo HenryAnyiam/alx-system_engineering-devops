@@ -1,36 +1,9 @@
 # add redirection and error page
-file { 'Nginx default config file':
-  ensure  => file,
-  path    => '/etc/nginx/sites-enabled/default',
-  content =>
-"server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	
-	root /var/www/html;
-	# Add index.php to the list if you are using PHP
-	
-	index index.html index.htm index.nginx-debian.html;
-	
-	server_name _;
-	add_header X-Served-By $hostname;
-
-	location /redirect_me {
-		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-	}
-	
-	location / {
-		# First attempt to serve request as file, then
-		# as directory, then fall back to displaying a 404.
-		try_files \$uri \$uri/ =404;
-	}
-	
-	error_page 404 /404.html;
-	
-	location  /404.html {
-		internal;
-	}
-
-}
-",
+exec { 'add_header';
+  command      => 'sudo apt-get -y update;
+  sudo apt-get -y  install nginx;
+  sudo sed -i '/server_name _;/a \\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;\n\t}\n\terror_page 404 /404.html;\n\tlocation \/404.html {\n\t\tinternal;\n}' /etc/nginx/sites-available/default;
+  sudo service nginx restart;',
+  provider     => shell,
+  refresh only => true,
 }
