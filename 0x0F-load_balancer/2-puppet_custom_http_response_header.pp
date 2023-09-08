@@ -50,7 +50,7 @@ file { 'Nginx default config file':
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm index.nginx-debian.html;
 	server_name _;
-	add_header X-Served-By $hostname
+	add_header X-Served-By $hostname;
 	location /redirect_me {
 		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
 }
