@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#create an archive of mysql backup
+sudo mysqldump -u root -p'$1' * > backup.sql
+date=$(date + "%d-%m-%Y")
+tar -cvzf "${date}.tar.gz" backup.sql
