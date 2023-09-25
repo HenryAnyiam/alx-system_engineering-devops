@@ -16,5 +16,5 @@ if __name__ == "__main__":
     for i in data:
         full.append([user_id, name, str(i.get('completed')), i.get('title')])
     with open(f"{user_id}.csv", 'w', encoding='UTF-8') as my_file:
-        obj = csv.writer(my_file)
+        obj = csv.writer(my_file, quoting=csv.QUOTE_ALL)
         obj.writerows(full)
