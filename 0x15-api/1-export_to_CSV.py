@@ -10,7 +10,7 @@ if __name__ == "__main__":
     tasks = get(f"https://jsonplaceholder.typicode.com/users/{argv[1]}/todos")
     data = tasks.json()
     info = details.json()
-    name = info.get('name')
+    name = info.get('username')
     full = []
     user_id = str(argv[1])
     for i in data:
