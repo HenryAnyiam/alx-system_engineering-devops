@@ -17,6 +17,6 @@ if __name__ == "__main__":
             completed += 1
             complete.append(i)
     print(f"Employee {info.get('name')} is done with"
-          f" tasks({completed}/{total})")
+            f" tasks({completed}/{total}):")
     for i in complete:
         print(f"     {i.get('title')}")
