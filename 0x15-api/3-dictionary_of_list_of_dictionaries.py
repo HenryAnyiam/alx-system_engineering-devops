@@ -6,7 +6,10 @@ import json
 
 
 if __name__ == "__main__":
-    for num in range(1, 11):
+    users = get(f"https://jsonplaceholder.typicode.com/users")
+    users = users.json()
+    for emp in users:
+        num = emp.get("id")
         details = get(f"https://jsonplaceholder.typicode.com/users/{num}")
         tasks = get(f"https://jsonplaceholder.typicode.com/users/{num}/todos")
         data = tasks.json()
