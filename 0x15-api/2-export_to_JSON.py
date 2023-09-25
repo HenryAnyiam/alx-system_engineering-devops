@@ -19,5 +19,4 @@ if __name__ == "__main__":
                      "username": name})
     user = {user_id: full}
     with open(f"{user_id}.json", 'w', encoding='UTF-8') as my_file:
-        user = json.dumps(user)
-        my_file.write(user)
+        json.dump(user, my_file)
