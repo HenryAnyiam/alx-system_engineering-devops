@@ -9,8 +9,13 @@ def top_ten(subreddit):
     header = {'user-agent': 'my-app/0.0.1'}
     res = requests.get(url, headers=header)
     if res.status_code == 404:
-        print(None)
-    data = res.json()
-    titles = data.get('data').get('children')[:10]
-    for i in titles:
-        print(i.get('data').get('title'))
+        print('None')
+    else:
+        data = res.json()
+        data = data.get('data')
+        if data == None:
+            print('None')
+            return
+        titles = data.get('children')[:10]
+        for i in titles:
+            print(i.get('data').get('title'))
