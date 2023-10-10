@@ -16,6 +16,11 @@ def top_ten(subreddit):
         if data is None:
             print('None')
             return
-        titles = data.get('children')[:10]
+        titles = data.get('children')
+        length = len(titles)
+        if length < 10:
+            titles = titles[:length]
+        else:
+            titles = titles[:10]
         for i in titles:
             print(i.get('data').get('title'))
