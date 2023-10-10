@@ -13,7 +13,7 @@ def top_ten(subreddit):
     else:
         data = res.json()
         data = data.get('data')
-        if data == None:
+        if data is None:
             print('None')
             return
         titles = data.get('children')[:10]
