@@ -37,7 +37,7 @@ def counting(hot_list, word_list):
 
 def count_words(subreddit, word_list, hot_list=[], count=0, after=None):
     """het all the titles of a subreddit hot topics"""
-    headers = {'user-agent': 'my-app/0.0.1'}
+    headers = {'user-agent': 'my-app/0.0.3'}
     if count == 0:
         url = f"https://api.reddit.com/r/{subreddit}/hot"
     else:
